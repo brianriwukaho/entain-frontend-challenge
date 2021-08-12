@@ -6,8 +6,9 @@ export function renderRaceItems(
     races: Race[],
     shiftItemsCallback: Function
 ): JSX.Element[] {
-    return races.map((race: Race) => (
+    return races.map((race: Race, index) => (
         <RaceItem
+            id={index + 1}
             key={race.race_id}
             race={race}
             shiftItems={shiftItemsCallback}

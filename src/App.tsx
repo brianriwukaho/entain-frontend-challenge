@@ -96,43 +96,45 @@ function App() {
         }
     }, [removeExpiredRaces, shiftItems]);
 
-    console.log(category);
-
     return (
         <div className="App">
-            <div>Showing {category} Races</div>
-            {category === Categories.ALL &&
-                renderRaceItems(
-                    nextRaces.slice(0, RACES_TO_DISPLAY),
-                    setShiftItems
-                )}
-            {category === Categories.HORSE &&
-                renderRaceItems(
-                    nextHorseRaces.slice(0, RACES_TO_DISPLAY),
-                    setShiftItems
-                )}
-            {category === Categories.HARNESS &&
-                renderRaceItems(
-                    nextHarnessRaces.slice(0, RACES_TO_DISPLAY),
-                    setShiftItems
-                )}
-            {category === Categories.GREYHOUND &&
-                renderRaceItems(
-                    nextGreyhoundRaces.slice(0, RACES_TO_DISPLAY),
-                    setShiftItems
-                )}
-            <button onClick={() => setCategory(Categories.ALL)}>
-                All Races
-            </button>
-            <button onClick={() => setCategory(Categories.HORSE)}>
-                Horses
-            </button>
-            <button onClick={() => setCategory(Categories.HARNESS)}>
-                Harnesses
-            </button>
-            <button onClick={() => setCategory(Categories.GREYHOUND)}>
-                GreyHound
-            </button>
+            <div className="title">Showing {category} Races</div>
+            <div className="race-items">
+                {category === Categories.ALL &&
+                    renderRaceItems(
+                        nextRaces.slice(0, RACES_TO_DISPLAY),
+                        setShiftItems
+                    )}
+                {category === Categories.HORSE &&
+                    renderRaceItems(
+                        nextHorseRaces.slice(0, RACES_TO_DISPLAY),
+                        setShiftItems
+                    )}
+                {category === Categories.HARNESS &&
+                    renderRaceItems(
+                        nextHarnessRaces.slice(0, RACES_TO_DISPLAY),
+                        setShiftItems
+                    )}
+                {category === Categories.GREYHOUND &&
+                    renderRaceItems(
+                        nextGreyhoundRaces.slice(0, RACES_TO_DISPLAY),
+                        setShiftItems
+                    )}
+            </div>
+            <div className="categories">
+                <button onClick={() => setCategory(Categories.ALL)}>
+                    All Races
+                </button>
+                <button onClick={() => setCategory(Categories.HORSE)}>
+                    Horses
+                </button>
+                <button onClick={() => setCategory(Categories.HARNESS)}>
+                    Harnesses
+                </button>
+                <button onClick={() => setCategory(Categories.GREYHOUND)}>
+                    Greyhounds
+                </button>
+            </div>
         </div>
     );
 }
