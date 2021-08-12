@@ -119,6 +119,6 @@ describe('application test suite', () => {
         expect(firstRace).not.toBeInTheDocument();
 
         const sixthRace = screen.getByText('race 6');
-        expect(firstRace).toBeInTheDocument();
+        expect(sixthRace).toBeInTheDocument();
     });
 });
