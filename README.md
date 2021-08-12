@@ -1,3 +1,13 @@
+# Entain Frontend Technical Challenge
+
+This app makes a call to: https://api.neds.com.au/rest/v1/racing/?method=nextraces&count=10
+
+The app displays the first 5 next races in descending order.
+
+You can toggle between different categories and the races displayed will change accordingly.
+
+After 60 seconds has passed since the start of a race, that race will be removed and a new race will appear in it's place, ensuring that 5 races are seen at all times.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

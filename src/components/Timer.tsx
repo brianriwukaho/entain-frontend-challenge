@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { convertSecondsToYears } from '../helpers';
 
 type Props = {
     seconds: number;
@@ -23,7 +24,7 @@ const Timer = ({ shiftItems, seconds }: Props) => {
         }
     }, [shiftItems, timeLeft]);
 
-    const formattedTime = new Date(timeLeft * 1000).toISOString().substr(11, 8);
+    const formattedTime = convertSecondsToYears(timeLeft);
 
     return <span>{formattedTime}</span>;
 };
